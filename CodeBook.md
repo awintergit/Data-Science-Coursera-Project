@@ -11,15 +11,15 @@ The purpose of this project is to demonstrate the ability to collect, work with,
 ##The original data files
 The original data files are provided by the UCI Machine Learning Repository.  The original data can be obtained here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.  The experiment was carried out using 30 voluneers, each performing 6 activities while wearing a smartphone on the waist.  The original data was partitioned into a training set and testing set.  Each set contains the following files relevant to creating the tidy data file:
 
-X_train.txt/X_test.txt - a file including 561 columns of data measurements
+  * X_train.txt/X_test.txt - a file including 561 columns of data measurements
 
-y_train.txt/y_test.txt - a file including 1 column of the activity identifier
+  * y_train.txt/y_test.txt - a file including 1 column of the activity identifier
 
-subject_train.txt/subject_test.txt - a file including 1 column of the volunteer identifier
+  * subject_train.txt/subject_test.txt - a file including 1 column of the volunteer identifier
 
-features.txt - a file containing column labels for X_train.txt/X_test.txt
+  * features.txt - a file containing column labels for X_train.txt/X_test.txt
 
-activity_labels.txt - a file containing labels for the identifiers in y_train.txt/y_test.txt
+  * activity_labels.txt - a file containing labels for the identifiers in y_train.txt/y_test.txt
 
 
 ###Guide to creating the tidy data file
@@ -38,11 +38,11 @@ The tidydata.txt file includes 180 rows and 68 columns.
 
 Each row contains:
 
-subject identifier (integer [1-30])
+  * subject identifier (integer [1-30])
 
-activity (text label ['WALKING', 'WALKING_UPSTAIRS', 'WALKING_DOWNSTAIRS', 'SITTING', 'STANDING', 'LAYING'])
+  * activity (text label ['WALKING', 'WALKING_UPSTAIRS', 'WALKING_DOWNSTAIRS', 'SITTING', 'STANDING', 'LAYING'])
 
-mean and standard deviation per measurement (number)
+  * mean and standard deviation per measurement (number)
 
 
 The measurments include a mean and standard deveation of each of the following variables where each measurement is recorded for X,Y, and Z
