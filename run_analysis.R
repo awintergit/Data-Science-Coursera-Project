@@ -47,22 +47,22 @@ subsetNames <- FeatureNames$V2[grep("mean\\(\\)|std\\(\\)", FeatureNames$V2)]   
 namesKeep <- c(as.character(subsetNames), "subject", "activity")                ## vector w/ column names we keep
 Data <- subset(Data,select=namesKeep)                                   ## now we only have mean std subject and activity
 
-activityNames <- read.table("activity_labels.txt")
-Data$activity <- factor(Data$activity, labels = activityNames$V2)
+activityNames <- read.table("activity_labels.txt")                      
+Data$activity <- factor(Data$activity, labels = activityNames$V2)       ## change numbers 1-6 to be corresponding activities
 
-names(Data) <- gsub("^t", "time", names(Data))
+names(Data) <- gsub("^t", "time", names(Data))                          ##make column names human readable
 names(Data) <- gsub("^f", "frequency", names(Data))
 names(Data) <- gsub("Acc", "Accelerometer", names(Data))
 names(Data) <- gsub("Gyro", "Gyroscope", names(Data))
 names(Data) <- gsub("Mag", "Magnitude", names(Data))
 names(Data) <- gsub("BodyBody", "Body", names(Data))
 
-FinalData <- aggregate(. ~subject + activity, Data, mean)
+FinalData <- aggregate(. ~subject + activity, Data, mean)                       ## mean of columns 
 FinalData <- FinalData[order(FinalData$subject,FinalData$activity), ] 
-write.table(FinalData, file = "tidydata.txt", row.name=FALSE)
+write.table(FinalData, file = "tidydata.txt", row.name=FALSE)                   ##create the file called tidydata.txt in working directory
 TidyData <- read.table("tidydata.txt",header=TRUE)
 
-TidyData
+TidyData                                                                ## prints tidydata.txt
 
 
 
