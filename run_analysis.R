@@ -16,7 +16,7 @@
 
 ####################################################################################################
 library(plyr);
-setwd("/Users/adamwinter/R_Analytics/data/UCI HAR Dataset")
+setwd("/Users/adamwinter/R_Analytics/data/UCI HAR Dataset")     ## set working directory to the place where UCI HAR Dataset was unzipped
 rm(list=ls())  
 
 Stest  <- read.table("./test/subject_test.txt")                 ## subject for exp
@@ -61,6 +61,8 @@ FinalData <- aggregate(. ~subject + activity, Data, mean)
 FinalData <- FinalData[order(FinalData$subject,FinalData$activity), ] 
 write.table(FinalData, file = "tidydata.txt", row.name=FALSE)
 TidyData <- read.table("tidydata.txt",header=TRUE)
+
+TidyData
 
 
 
